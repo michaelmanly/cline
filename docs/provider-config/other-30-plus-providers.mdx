@@ -9,6 +9,7 @@ Use this page for providers that follow the same setup pattern.
 
 - [Shared Configuration in Cline](#shared-configuration-in-cline)
 - [Providers](#providers)
+  - [AI Badgr API](#ai-badgr-api)
   - [AIHubMix](#aihubmix)
   - [AskSage](#asksage)
   - [Baseten](#baseten)
@@ -45,6 +46,17 @@ Use this page for providers that follow the same setup pattern.
 For the full auth flow (IDE + CLI), see [Authorization & Model Selection](/getting-started/authorizing-with-cline#menu).
 
 ## Providers
+
+### AI Badgr API
+AI Badgr provides an OpenAI-compatible AI API for routing Cline model requests through Badgr-managed models or compatible upstream providers. Configure it in Cline with the **OpenAI Compatible** provider flow.
+
+**Website:** [https://aibadgr.com/ai-api](https://aibadgr.com/ai-api)
+
+#### Basic Setup
+
+1. Create/sign in to AI Badgr and create an API key.
+2. In Cline, choose **OpenAI Compatible**.
+3. Set the base URL to `https://aibadgr.com/v1`, paste your API key, and enter the Badgr model ID you want to use.
 
 ### AIHubMix
 AIHubMix is an OpenAI-compatible model aggregator that gives you one API surface for multiple model backends.

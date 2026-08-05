@@ -1,0 +1,43 @@
+---
+title: "Run Cline Remotely with AI Badgr"
+description: "Launch Cline in a disposable AI Badgr cloud job with cost caps, logs, patches, and artifacts."
+---
+
+Use AI Badgr Agent Cloud when you want Cline to work on a repository in a disposable cloud environment instead of your local machine.
+
+<Info>
+This workflow is separate from Cline's model provider settings. To use Badgr as a model/API provider inside Cline, configure the [AI Badgr API](/provider-config/other-30-plus-providers#ai-badgr-api) through the OpenAI Compatible provider flow.
+</Info>
+
+## How it works
+
+```text
+Cline runs inside a disposable Badgr VM
+→ repository is cloned
+→ task runs
+→ patch, logs, and artifacts return
+→ cost/runtime caps apply
+→ VM is deleted
+```
+
+Badgr handles the cloud job environment around Cline: it provisions compatible capacity, enforces the maximum cost/runtime you set, preserves logs and artifacts, and tears down the VM when the job finishes or hits a limit.
+
+## Run one Cline job
+
+```bash
+badgr launch cline "Fix the checkout issue and run the tests"
+```
+
+Use a concrete task prompt and include the validation you expect Cline to run. For longer tasks, mention the target branch, relevant files, and required test commands.
+
+## Recommended workflow
+
+1. Connect or point Badgr at the repository Cline should modify.
+2. Launch a Cline job with a clear task prompt and maximum cost/runtime cap.
+3. Wait for Badgr to clone the repository and run Cline inside the disposable VM.
+4. Review the returned patch, logs, artifacts, test evidence, runtime, and cost receipt.
+5. Apply or merge the returned changes if the result is acceptable.
+
+<Warning>
+Review returned patches before merging. A remote Cline job can edit files and run commands in the cloned repository according to the task and job policy you provide.
+</Warning>

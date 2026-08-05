@@ -112,6 +112,7 @@
 								"pages": [
 									"usage/cli-overview",
 									"cli/cli-reference",
+									"cli/run-remotely-with-ai-badgr",
 									{
 										"group": "Examples",
 										"pages": [
@@ -1092,6 +1093,10 @@
 			"destination": "/provider-config/other-30-plus-providers#sap-ai-core"
 		},
 		{
+			"source": "/provider-config/ai-badgr",
+			"destination": "/provider-config/other-30-plus-providers#ai-badgr-api"
+		},
+		{
 			"source": "/provider-config/together",
 			"destination": "/provider-config/other-30-plus-providers#together"
 		},
@@ -1118,6 +1123,10 @@
 		{
 			"source": "/troubleshooting/terminal-quick-fixes",
 			"destination": "/core-workflows/using-commands"
+		},
+		{
+			"source": "/integrations/ai-badgr",
+			"destination": "/cli/run-remotely-with-ai-badgr"
 		}
 	],
 	"search": {
